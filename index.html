@@ -13,7 +13,10 @@
             color: #efefef;
         }
 
-        h1,
+        h1 {
+            color: #ffffff;
+        }
+
         h2,
         h3,
         h4,
@@ -33,6 +36,8 @@
         }
 
         header {
+            position: relative;
+            /* Important for the overlay to position correctly */
             background-image: url('/img/dew-4567294_1320x200.jpg');
             background-size: cover;
             background-position: center;
@@ -43,15 +48,28 @@
             justify-content: center;
             align-items: center;
             padding: 10px 0;
+            overflow: hidden;
         }
 
-        .header-content {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px 40px;
-            border-radius: 0 10px;
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
         }
 
-        html, body {
+        header h1 {
+            position: relative;
+            z-index: 1;
+        }
+
+
+        html,
+        body {
             height: 100%;
             margin: 0;
         }
@@ -80,19 +98,16 @@
         <div class="row">
             <div class="col">
                 <header>
-                    <div class="header-content">
-                        <h1>Mhisdev</h1>
-                        <p>Web and Software Developer</p>
-                    </div>
+                    <h1>Web &amp; Software Developer</h1>
                 </header>
 
                 <section>
                     <h2 class="text-center">About</h2>
-                    <p class="text-center">I am Web and Software Developer with a strong focus on building efficient,
-                        scalable, and user-friendly applications. With expertise in HTML, CSS, PHP, and SQL databases, I
-                        create dynamic websites and software solutions that deliver seamless experiences. Whether it's
-                        crafting clean front-end interfaces or optimizing back-end performance, I thrive on turning
-                        ideas into reality with well-structured, maintainable code.
+                    <p class="text-center">I am an experienced Web and Software Developer with a strong focus on
+                        building efficient, scalable, and user-friendly applications. With expertise in HTML, CSS, PHP,
+                        and SQL databases, I create dynamic websites and software solutions that deliver seamless
+                        experiences. Whether it's crafting clean front-end interfaces or optimizing back-end
+                        performance, I thrive on turning ideas into reality with well-structured, maintainable code.
                     </p>
                 </section>
 
